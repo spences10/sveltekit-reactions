@@ -1,16 +1,11 @@
 <script lang="ts">
 	import { enhance } from '$app/forms'
+	import { reactions } from '$lib/config'
 	import type { ActionResult } from '@sveltejs/kit'
 	import { writable } from 'svelte/store'
 
 	export let path: string | null = '/'
 	export let data: ReactionsData | null = null
-	export let reactions: { type: string; emoji: string }[] = [
-		{ type: 'likes', emoji: '👍' },
-		{ type: 'hearts', emoji: '❤️' },
-		{ type: 'poops', emoji: '💩' },
-		{ type: 'parties', emoji: '🎉' },
-	]
 
 	let button_disabled = writable(false)
 
