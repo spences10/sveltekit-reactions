@@ -1,44 +1,30 @@
-# create-svelte
+# SvelteKit emoji reactions component
 
-Everything you need to build a Svelte project, powered by
-[`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+A simple component that can be adapted for use in your SvelteKit
+project.
 
-## Creating a project
+Uses SvelteKit form actions to submit reactions to a Upstash Redis
+database with Upstash rate limiting.
 
-If you're seeing this, you've probably already done this step.
-Congrats!
+Configurable through the `src/lib/config.ts` file.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Demo
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+https://sveltekit-reactions.vercel.app
 
-## Developing
+## Resources
 
-Once you've created a project and installed dependencies with
-`npm install` (or `pnpm install` or `yarn`), start a development
-server:
+Initial idea from:
 
-```bash
-npm run dev
+- https://github.com/upstash/claps
+- https://grafbase.com/guides/add-reactions-to-your-sveltekit-pages-with-graphql-and-form-actions
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+How to use rate limit with SvelteKit:
 
-## Building
+- https://upstash.com/blog/sveltekit-rate-limiting
 
-To create a production version of your app:
+## Thanks
 
-```bash
-npm run build
-```
+Jamie Barton for the reactions post on the Grafbase blog.
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an
-> [adapter](https://kit.svelte.dev/docs/adapters) for your target
-> environment.
+Geoff Rich for the awesome guide on the Upstash blog.
