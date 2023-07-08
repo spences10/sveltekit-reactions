@@ -19,7 +19,7 @@
 	}
 </script>
 
-<div class="flex items-center justify-center h-screen">
+<div class="flex justify-center">
 	<form
 		method="POST"
 		action="/?path={path}"
@@ -37,7 +37,7 @@
 				name="reaction"
 				type="submit"
 				value={reaction.type}
-				class="btn btn-primary text-3xl"
+				class="btn btn-primary shadow-xl text-3xl font-bold"
 				disabled={$button_disabled}
 			>
 				<span>
