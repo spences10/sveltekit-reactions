@@ -10,6 +10,10 @@ const config = {
 	},
 
 	plugins: [typography, daisyui],
+
+	daisyui: {
+		themes: ['cupcake'],
+	},
 }
 
 module.exports = config
