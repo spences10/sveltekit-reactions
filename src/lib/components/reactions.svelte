@@ -30,7 +30,7 @@
 				update({ reset: false })
 			}
 		}}
-		class="space-x-4"
+		class="grid grid-cols-2 gap-5 sm:flex"
 	>
 		{#each reactions as reaction}
 			<button
