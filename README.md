@@ -29,4 +29,4 @@ How to use rate limit with SvelteKit:
 
 Jamie Barton for the reactions post on the Grafbase blog.
 
-Geoff Rich for the awesome guide on the Upstash blog.
+Geoff Rich for the rate limit guide on the Upstash blog.
