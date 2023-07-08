@@ -5,6 +5,7 @@ import {
 } from '$env/static/private'
 import { Ratelimit } from '@upstash/ratelimit'
 import { Redis } from '@upstash/redis'
+import { limit_requests, limit_window } from './config'
 
 let redis: Redis
 let ratelimit: Ratelimit
@@ -17,8 +18,8 @@ if (!building) {
 
 	ratelimit = new Ratelimit({
 		redis,
-		limiter: Ratelimit.slidingWindow(10, '30 s'),
+		limiter: Ratelimit.slidingWindow(limit_requests, limit_window),
 	})
 }
 
-export { redis, ratelimit }
+export { ratelimit, redis }
