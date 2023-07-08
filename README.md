@@ -1,5 +1,7 @@
 # SvelteKit emoji reactions component
 
+![emoji reaction buttons](.github/buttons.png)
+
 A simple component that can be adapted for use in your SvelteKit
 project.
 
