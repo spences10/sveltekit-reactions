@@ -8,7 +8,7 @@ declare global {
 		// interface Platform {}
 	}
 	interface ReactionCount {
-		[key: string]: string
+		[key: string]: number
 	}
 	interface ReactionsData {
 		path: string

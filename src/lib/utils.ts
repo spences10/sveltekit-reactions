@@ -1,4 +1,4 @@
-import redis from './redis.js'
+import { redis } from './redis'
 
 const reactions = ['likes', 'hearts', 'poops', 'parties']
 
@@ -10,9 +10,9 @@ export async function get_reaction_count(
 	)
 	const results = await Promise.all(promises)
 
-	const counts: ReactionCount = {}
+	const counts = {} as ReactionCount
 	reactions.forEach((reaction, index) => {
-		counts[reaction] = results[index] || '0'
+		counts[reaction] = Number(results[index]) || 0
 	})
 
 	return counts

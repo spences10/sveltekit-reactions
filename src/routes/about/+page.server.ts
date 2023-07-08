@@ -1,19 +1,6 @@
-import redis from '$lib/redis.js'
+import { get_reaction_count } from '$lib/utils.js'
 
 export const load = async ({ url: { pathname } }) => {
-	const reactions = ['likes', 'hearts', 'poops', 'parties']
-
-	const promises = reactions.map((reaction) =>
-		redis.get(`${pathname}:${reaction}`)
-	)
-	const results = await Promise.all(promises)
-
-	const counts: ReactionCount = {}
-	reactions.forEach((reaction, index) => {
-		counts[reaction] = results[index] || '0'
-	})
-
-	return {
-		counts,
-	}
+	const counts = await get_reaction_count(pathname)
+	return { counts }
 }
