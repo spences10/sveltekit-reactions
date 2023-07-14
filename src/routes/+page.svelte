@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores'
+	import NumberFlip from '$lib/components/number-flip.svelte'
 	import Reactions from '$lib/components/reactions.svelte'
 
 	export let data: ReactionsData | null = null
@@ -14,3 +15,5 @@
 </p>
 
 <Reactions {path} {data} />
+
+<NumberFlip />
