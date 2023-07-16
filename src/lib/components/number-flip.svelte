@@ -33,8 +33,7 @@
 	function handle_click() {
 		count += 1
 		displayed_count.set(count)
-		crunched_number = number_crunch(count + 1)
-		crunched_length = crunched_number.length
+		crunched_number = number_crunch(count)
 		button_width =
 			base_width + padding + character_width * crunched_length + 'rem'
 	}
@@ -50,11 +49,11 @@
 	style:width={button_width}
 >
 	<div
-		class="absolute left-13 h-full"
+		class="absolute left-14 h-full"
 		style="transform: translate(0, {100 * offset}%)"
 	>
 		<div
-			class="absolute flex h-full items-center {font_size} text-3xl"
+			class="absolute flex h-full items-center {font_size}"
 			style="top: -100%"
 			aria-hidden="true"
 		>
