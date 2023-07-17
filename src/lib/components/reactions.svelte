@@ -53,6 +53,11 @@
 					emoji={reaction.emoji}
 					value={reaction.type}
 					disabled={$button_disabled}
+					aria_label={`Submit ${
+						reaction.type
+					} reaction. Current count: ${
+						data?.counts?.[reaction.type] || 0
+					}`}
 				/>
 			{/each}
 		{:else}
@@ -63,6 +68,11 @@
 					value={reaction.type}
 					class="btn btn-primary shadow-xl text-3xl font-bold"
 					disabled={$button_disabled}
+					aria-label={`Submit ${
+						reaction.type
+					} reaction. Current count: ${
+						data?.counts?.[reaction.type] || 0
+					}`}
 				>
 					<span>
 						{reaction.emoji}

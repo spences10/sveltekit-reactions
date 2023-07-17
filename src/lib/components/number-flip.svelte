@@ -11,6 +11,7 @@
 	export let emoji: string
 	export let value: string
 	export let disabled: boolean
+	export let aria_label: string
 
 	const displayed_count = spring(count)
 	$: displayed_count.set(count)
@@ -47,6 +48,8 @@
 	class="btn lowercase btn-primary overflow-hidden relative shadow-xl"
 	on:click={handle_click}
 	style:width={button_width}
+	title={count > 1000 ? `${value} ${count}` : ''}
+	aria-label={aria_label}
 >
 	<div
 		class="absolute left-14 h-full"
