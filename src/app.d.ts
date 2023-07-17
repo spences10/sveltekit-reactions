@@ -12,7 +12,7 @@ declare global {
 	}
 	interface ReactionsData {
 		path: string
-		counts: ReactionCount
+		count: ReactionCount
 	}
 }
 

@@ -22,9 +22,9 @@ export const actions = {
 		const reaction = data.get('reaction')
 		const path = url.searchParams.get('path')
 
-		const redisKey = `${path}:${reaction}`
+		const redis_key = `${path}:${reaction}`
 
-		const result = await redis.incr(redisKey)
+		const result = await redis.incr(redis_key)
 
 		return {
 			success: true,

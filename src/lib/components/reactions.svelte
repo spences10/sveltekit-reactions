@@ -49,14 +49,14 @@
 		{#if !show_static_buttons}
 			{#each reactions as reaction}
 				<NumberFlip
-					count={data?.counts?.[reaction.type] || 0}
+					count={data?.count?.[reaction.type] || 0}
 					emoji={reaction.emoji}
 					value={reaction.type}
 					disabled={$button_disabled}
 					aria_label={`Submit ${
 						reaction.type
 					} reaction. Current count: ${
-						data?.counts?.[reaction.type] || 0
+						data?.count?.[reaction.type] || 0
 					}`}
 				/>
 			{/each}
@@ -71,12 +71,12 @@
 					aria-label={`Submit ${
 						reaction.type
 					} reaction. Current count: ${
-						data?.counts?.[reaction.type] || 0
+						data?.count?.[reaction.type] || 0
 					}`}
 				>
 					<span>
 						{reaction.emoji}
-						{data?.counts?.[reaction.type] || 0}
+						{data?.count?.[reaction.type] || 0}
 					</span>
 				</button>
 			{/each}
