@@ -11,10 +11,10 @@ export async function get_reaction_count(
 	)
 	const results = await Promise.all(promises)
 
-	const counts = {} as ReactionCount
+	const count = {} as ReactionCount
 	reaction_types.forEach((reaction, index) => {
-		counts[reaction] = Number(results[index]) || 0
+		count[reaction] = Number(results[index]) || 0
 	})
 
-	return counts
+	return count
 }
