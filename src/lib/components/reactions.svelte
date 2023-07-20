@@ -36,7 +36,7 @@
 <div class="flex justify-center">
 	<form
 		method="POST"
-		action="/?path={path}"
+		action="/api/reactions?path={path}"
 		use:enhance={() => {
 			return ({ update, result }) => {
 				handle_result(result)
