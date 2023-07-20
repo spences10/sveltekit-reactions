@@ -10,6 +10,11 @@ database with Upstash rate limiting.
 
 Configurable through the `src/lib/config.ts` file.
 
+## Blog post
+
+Detail on how it was implemented:
+https://scottspence.com/posts/sveltekit-page-reaction-component-with-upstash-redis
+
 ## Demo
 
 https://sveltekit-reactions.vercel.app
