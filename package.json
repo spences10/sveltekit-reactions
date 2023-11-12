@@ -24,7 +24,7 @@
 		"@upstash/ratelimit": "^0.4.3",
 		"@upstash/redis": "^1.22.0",
 		"autoprefixer": "^10.4.14",
-		"daisyui": "^3.1.6",
+		"daisyui": "^4.0.0",
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-svelte": "^2.30.0",
