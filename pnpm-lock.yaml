@@ -24,8 +24,8 @@ devDependencies:
     specifier: ^6.0.0
     version: 6.0.0(eslint@8.45.0)(typescript@5.1.6)
   '@upstash/ratelimit':
-    specifier: ^0.4.3
-    version: 0.4.3
+    specifier: ^1.0.0
+    version: 1.0.0
   '@upstash/redis':
     specifier: ^1.22.0
     version: 1.22.0
@@ -695,8 +695,8 @@ packages:
       - encoding
     dev: true
 
-  /@upstash/ratelimit@0.4.3:
-    resolution: {integrity: sha512-Dsp9Mw09Flg28JRklKgFiCXqr3bqv8bbG0kgpUYoHjcgPPolFFyaYOj/I2HExvYLZiogl77NUavBoNvMOK0zUQ==}
+  /@upstash/ratelimit@1.0.0:
+    resolution: {integrity: sha512-IUlc+UKuHJQqXGQi7E3UKV0CKfRZ0g6qeNnbSve940k3xLoM+X3H45MrSwDaH7meMWemztLs0Q4yjkd3ItddCw==}
     dependencies:
       '@upstash/core-analytics': 0.0.6
     transitivePeerDependencies:
