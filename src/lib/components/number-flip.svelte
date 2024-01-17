@@ -4,40 +4,54 @@
 -->
 <script lang="ts">
 	import { number_crunch } from '$lib/number-crunch'
-	import { spring } from 'svelte/motion'
+  import { spring } from 'svelte/motion'
 
-	export let count: number = 0
-	export let font_size = 'text-3xl'
-	export let emoji: string
-	export let value: string
-	export let disabled: boolean
-	export let aria_label: string
+  let {
+    count,
+    font_size = 'text-2xl',
+    emoji,
+    value,
+    disabled,
+    aria_label,
+  } = $props<{
+    count: number
+    font_size?: string
+    emoji: string
+    value: string
+    disabled: boolean
+    aria_label: string
+  }>()
 
-	const displayed_count = spring(count)
-	$: displayed_count.set(count)
-	$: offset = modulo($displayed_count, 1)
+  let base_width = 2
+  let padding = 3
+  let character_width = 1
 
-	function modulo(n: number, m: number) {
-		return ((n % m) + m) % m
-	}
+  const displayed_count = spring(count)
+  let offset = $state(0)
+  let button_width = $state(``)
 
-	let base_width = 2
-	let padding = 3
-	let character_width = 1
+  $effect(() => {
+    displayed_count.set(count)
+    offset = modulo($displayed_count, 1)
+    button_width =
+      base_width + padding + character_width * crunched_length + 'rem'
+  })
 
-	// calculate initial button width
-	let crunched_number = number_crunch(count)
-	let crunched_length = crunched_number.length
-	let button_width =
-		base_width + padding + character_width * crunched_length + 'rem'
+  function modulo(n: number, m: number) {
+    return ((n % m) + m) % m
+  }
 
-	function handle_click() {
-		count += 1
-		displayed_count.set(count)
-		crunched_number = number_crunch(count)
-		button_width =
-			base_width + padding + character_width * crunched_length + 'rem'
-	}
+  // calculate initial button width
+  let crunched_number = number_crunch(count)
+  let crunched_length = crunched_number.length
+
+  function handle_click() {
+    count += 1
+    displayed_count.set(count)
+    crunched_number = number_crunch(count)
+    button_width =
+      base_width + padding + character_width * crunched_length + 'rem'
+  }
 </script>
 
 <button
