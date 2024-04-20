@@ -31,7 +31,7 @@ importers:
         version: 7.6.0(eslint@9.0.0)(typescript@5.4.3)
       '@upstash/ratelimit':
         specifier: ^1.0.1
-        version: 1.0.3
+        version: 1.1.2
       '@upstash/redis':
         specifier: ^1.29.0
         version: 1.29.0
@@ -500,12 +500,12 @@ packages:
     resolution: {integrity: sha512-4eLB7t+LlNUmXzfOu1VAIAdkjbu5xNSerURS9X/S5TUKWFRpXRQZbmtPqgKmYx8bj3J0irtQXSiWAOY82v+cgw==}
     engines: {node: ^18.18.0 || >=20.0.0}
 
-  '@upstash/core-analytics@0.0.7':
-    resolution: {integrity: sha512-lC2j5efqb1haX/fpTGaPUx1rue1WUkOZBVHDzCB7eMIVsRdFFp4xiHtyH/G9omiR1zj39fU5SCTWFiKJH3KOpw==}
+  '@upstash/core-analytics@0.0.8':
+    resolution: {integrity: sha512-MCJoF+Y8fkzq4NRLG7kEHjtGyMsZ2DICBdmEdwoK9umoSrfkzgBlYdZiHTIaewyt9PGaMZCHOasz0LAuMpxwxQ==}
     engines: {node: '>=16.0.0'}
 
-  '@upstash/ratelimit@1.0.3':
-    resolution: {integrity: sha512-uaws/6Ar28TICm61wfIbL4Ba91WYtIfl6HMj0PNJ0H/nm0SSXwVbCxPEiX9aXa41gMlVWujaJcOreqIuO8/mqg==}
+  '@upstash/ratelimit@1.1.2':
+    resolution: {integrity: sha512-u9aGWwJ9rojcoZoD3EyBJ0F/fLOtD4dlugCYcRTFXNPPDnMAQ8Y8CoXb02hucT24q62xb3ikyS4NdZyj4aqESQ==}
 
   '@upstash/redis@1.29.0':
     resolution: {integrity: sha512-kbO5fgMAeUzErnA/SOtaSbAa0dguYhhBT4MZHJ1O8gVl4iK754aC9+rIYY5hsp4nlxeCGfnIDkWpof991c9jjA==}
@@ -2136,13 +2136,13 @@ snapshots:
       '@typescript-eslint/types': 7.6.0
       eslint-visitor-keys: 3.4.3
 
-  '@upstash/core-analytics@0.0.7':
+  '@upstash/core-analytics@0.0.8':
     dependencies:
       '@upstash/redis': 1.29.0
 
-  '@upstash/ratelimit@1.0.3':
+  '@upstash/ratelimit@1.1.2':
     dependencies:
-      '@upstash/core-analytics': 0.0.7
+      '@upstash/core-analytics': 0.0.8
 
   '@upstash/redis@1.29.0':
     dependencies:
