@@ -30,8 +30,8 @@ importers:
         specifier: ^7.12.0
         version: 7.16.1(eslint@9.7.0)(typescript@5.5.3)
       '@upstash/ratelimit':
-        specifier: ^1.2.0
-        version: 1.2.1
+        specifier: ^2.0.0
+        version: 2.0.0
       '@upstash/redis':
         specifier: ^1.31.3
         version: 1.33.0
@@ -497,8 +497,8 @@ packages:
     resolution: {integrity: sha512-9NXXxZ5y1/A/zqKLlVT7NsAWSggJfOjB0hG6Ffx29b4jbzHOiQVWB55h5+j2clT9Ib+mNPXn0iB5zN3aWLkICw==}
     engines: {node: '>=16.0.0'}
 
-  '@upstash/ratelimit@1.2.1':
-    resolution: {integrity: sha512-o01lV1yFS5Fzj5KONZmNyVch/Qrlj785B2ob+kStUmxn8F6xXk7IHTQqVcHE+Ce3CmT/qQIwvMxDZftyJ5wYpQ==}
+  '@upstash/ratelimit@2.0.0':
+    resolution: {integrity: sha512-UbOdDpC6CFsrQyevfwbpxr92OkDccKr+KpC9+idxOrmr3U6XbIQq/UIunSLIZ7kYwxoY5j3i7Ky5nwHZ3/DTvA==}
 
   '@upstash/redis@1.33.0':
     resolution: {integrity: sha512-5WOilc7AE0ITAdE3NCyMwgOq1n3RHcqW0OfmbotiAyfA+QAEe1R7kXin8L/Yladgdc5lkA0GcYyewqKfAw53jQ==}
@@ -2085,7 +2085,7 @@ snapshots:
     dependencies:
       '@upstash/redis': 1.33.0
 
-  '@upstash/ratelimit@1.2.1':
+  '@upstash/ratelimit@2.0.0':
     dependencies:
       '@upstash/core-analytics': 0.0.9
 
