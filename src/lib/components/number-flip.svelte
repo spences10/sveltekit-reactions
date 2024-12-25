@@ -60,7 +60,7 @@
 	{value}
 	{disabled}
 	class="btn lowercase btn-primary overflow-hidden relative shadow-xl"
-	on:click={handle_click}
+	onclick={handle_click}
 	style:width={button_width}
 	title={count > 1000 ? `${value} ${count}` : ''}
 	aria-label={aria_label}

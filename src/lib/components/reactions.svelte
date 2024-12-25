@@ -5,8 +5,12 @@
 	import { writable } from 'svelte/store'
 	import NumberFlip from './number-flip.svelte'
 
-	export let path: string | null = '/'
-	export let data: ReactionsData | null = null
+	interface Props {
+		path?: string | null
+		data?: ReactionsData | null
+	}
+
+	let { path = '/', data = null }: Props = $props()
 
 	let button_disabled = writable(false)
 
@@ -19,7 +23,7 @@
 		}
 	}
 
-	let show_static_buttons = false
+	let show_static_buttons = $state(false)
 </script>
 
 <div class="flex justify-center mb-4">

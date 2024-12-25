@@ -2,7 +2,11 @@
 	import { page } from '$app/stores'
 	import Reactions from '$lib/components/reactions.svelte'
 
-	export let data: ReactionsData | null = null
+	interface Props {
+		data?: ReactionsData | null
+	}
+
+	let { data = null }: Props = $props()
 
 	let path = $page.route.id
 </script>
