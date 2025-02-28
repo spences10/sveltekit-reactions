@@ -9,11 +9,11 @@ declare global {
 		// interface Platform {}
 	}
 	interface ReactionCount {
-		[key: string]: number
+		[key: string]: number;
 	}
 	interface ReactionsData {
-		path: string
-		count: ReactionCount
+		path: string;
+		count: ReactionCount;
 	}
 }
 

@@ -1,32 +1,32 @@
 <script lang="ts">
-	import { enhance } from '$app/forms'
-	import { reactions } from '$lib/config'
-	import type { ActionResult } from '@sveltejs/kit'
-	import { writable } from 'svelte/store'
-	import NumberFlip from './number-flip.svelte'
+	import { enhance } from '$app/forms';
+	import { reactions } from '$lib/config';
+	import type { ActionResult } from '@sveltejs/kit';
+	import { writable } from 'svelte/store';
+	import NumberFlip from './number-flip.svelte';
 
 	interface Props {
-		path?: string | null
-		data?: ReactionsData | null
+		path?: string | null;
+		data?: ReactionsData | null;
 	}
 
-	let { path = '/', data = null }: Props = $props()
+	let { path = '/', data = null }: Props = $props();
 
-	let button_disabled = writable(false)
+	let button_disabled = writable(false);
 
 	const handle_result = (result: ActionResult) => {
 		if (result.type === 'failure') {
-			$button_disabled = true
+			$button_disabled = true;
 			setTimeout(() => {
-				$button_disabled = false
-			}, result?.data?.time_remaining * 1000)
+				$button_disabled = false;
+			}, result?.data?.time_remaining * 1000);
 		}
-	}
+	};
 
-	let show_static_buttons = $state(false)
+	let show_static_buttons = $state(false);
 </script>
 
-<div class="flex justify-center mb-4">
+<div class="mb-4 flex justify-center">
 	<label class="label cursor-pointer space-x-5">
 		<span class="label-text">Show static buttons</span>
 		<input
@@ -43,10 +43,10 @@
 		action="/api/reactions?path={path}"
 		use:enhance={() => {
 			return ({ update, result }) => {
-				handle_result(result)
-				console.log(JSON.stringify(result, null, 2))
-				update({ reset: false })
-			}
+				handle_result(result);
+				console.log(JSON.stringify(result, null, 2));
+				update({ reset: false });
+			};
 		}}
 		class="grid grid-cols-2 gap-5 sm:flex"
 	>
@@ -70,7 +70,7 @@
 					name="reaction"
 					type="submit"
 					value={reaction.type}
-					class="btn btn-primary shadow-xl text-3xl font-bold"
+					class="btn btn-primary text-3xl font-bold shadow-xl"
 					disabled={$button_disabled}
 					aria-label={`Submit ${
 						reaction.type

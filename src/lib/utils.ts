@@ -1,20 +1,20 @@
-import { reactions } from './config'
-import { redis } from './redis'
+import { reactions } from './config';
+import { redis } from './redis';
 
-const reaction_types = reactions.map((reaction) => reaction.type)
+const reaction_types = reactions.map((reaction) => reaction.type);
 
 export async function get_reaction_count(
-	pathname: string
+	pathname: string,
 ): Promise<ReactionCount> {
 	const promises = reaction_types.map((reaction) =>
-		redis.get(`${pathname}:${reaction}`)
-	)
-	const results = await Promise.all(promises)
+		redis.get(`${pathname}:${reaction}`),
+	);
+	const results = await Promise.all(promises);
 
-	const count = {} as ReactionCount
+	const count = {} as ReactionCount;
 	reaction_types.forEach((reaction, index) => {
-		count[reaction] = Number(results[index]) || 0
-	})
+		count[reaction] = Number(results[index]) || 0;
+	});
 
-	return count
+	return count;
 }

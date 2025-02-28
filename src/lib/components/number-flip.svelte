@@ -3,8 +3,8 @@
 	https://codesandbox.io/s/svelte-kit-demo-typescript-slxxe
 -->
 <script lang="ts">
-	import { number_crunch } from '$lib/number-crunch'
-	import { spring } from 'svelte/motion'
+	import { number_crunch } from '$lib/number-crunch';
+	import { spring } from 'svelte/motion';
 
 	let {
 		count,
@@ -14,43 +14,49 @@
 		disabled,
 		aria_label,
 	}: {
-		count: number
-		font_size?: string
-		emoji: string
-		value: string
-		disabled: boolean
-		aria_label: string
-	} = $props()
+		count: number;
+		font_size?: string;
+		emoji: string;
+		value: string;
+		disabled: boolean;
+		aria_label: string;
+	} = $props();
 
-	let base_width = 2
-	let padding = 3
-	let character_width = 1
+	let base_width = 2;
+	let padding = 3;
+	let character_width = 1;
 
-	const displayed_count = spring(count)
-	let offset = $state(0)
-	let button_width = $state(``)
+	const displayed_count = spring(count);
+	let offset = $state(0);
+	let button_width = $state(``);
 
 	$effect(() => {
-		displayed_count.set(count)
-		offset = modulo($displayed_count, 1)
+		displayed_count.set(count);
+		offset = modulo($displayed_count, 1);
 		button_width =
-			base_width + padding + character_width * crunched_length + 'rem'
-	})
+			base_width +
+			padding +
+			character_width * crunched_length +
+			'rem';
+	});
 
 	function modulo(n: number, m: number) {
-		return ((n % m) + m) % m
+		return ((n % m) + m) % m;
 	}
 
 	// calculate initial button width
-	let crunched_number = number_crunch(count)
-	let crunched_length = crunched_number.length
+	let crunched_number = number_crunch(count);
+	let crunched_length = crunched_number.length;
 
 	function handle_click() {
-		count += 1
-		displayed_count.set(count)
-		crunched_number = number_crunch(count)
+		count += 1;
+		displayed_count.set(count);
+		crunched_number = number_crunch(count);
 		button_width =
-			base_width + padding + character_width * crunched_length + 'rem'
+			base_width +
+			padding +
+			character_width * crunched_length +
+			'rem';
 	}
 </script>
 
@@ -59,7 +65,7 @@
 	type="submit"
 	{value}
 	{disabled}
-	class="btn lowercase btn-primary overflow-hidden relative shadow-xl"
+	class="btn btn-primary relative overflow-hidden lowercase shadow-xl"
 	onclick={handle_click}
 	style:width={button_width}
 	title={count > 1000 ? `${value} ${count}` : ''}
@@ -84,7 +90,7 @@
 			</strong>
 		</div>
 	</div>
-	<div class="absolute flex h-full items-center left-2">
+	<div class="absolute left-2 flex h-full items-center">
 		<span class={font_size}>{emoji}</span>
 	</div>
 </button>

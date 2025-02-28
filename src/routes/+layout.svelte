@@ -3,7 +3,7 @@
 	let { children } = $props();
 </script>
 
-<main class="container max-w-3xl mx-auto px-4 prose prose-xl">
+<main class="prose prose-xl container mx-auto max-w-3xl px-4">
 	<h1>SvelteKit reactions</h1>
 	<p>
 		An example project to demonstrate how to add emoji reactions to

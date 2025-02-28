@@ -3,5 +3,5 @@
 /* Plugin configurations */
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
-	themes:		cupcake --default;
+	themes: cupcake --default;
 }
