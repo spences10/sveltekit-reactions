@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { page } from '$app/stores'
+	import { page } from '$app/state'
 	import Reactions from '$lib/components/reactions.svelte'
 
 	interface Props {
@@ -8,7 +8,7 @@
 
 	let { data = null }: Props = $props()
 
-	let path = $page.route.id
+	let path = page.route.id
 </script>
 
 <Reactions {path} {data} />
