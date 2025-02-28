@@ -29,7 +29,7 @@
 		"@testing-library/svelte": "^5.2.7",
 		"@upstash/ratelimit": "^2.0.5",
 		"@upstash/redis": "^1.34.4",
-		"daisyui": "5.0.0-beta.9",
+		"daisyui": "5.0.0",
 		"eslint": "^9.21.0",
 		"eslint-config-prettier": "^10.0.2",
 		"eslint-plugin-svelte": "^3.0.2",
